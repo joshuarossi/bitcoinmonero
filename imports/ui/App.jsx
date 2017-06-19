@@ -5,6 +5,7 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 
 import {Tickers} from '../api/tickers.js';
+import {Balances} from '../api/balances.js';
 
 import Ticker from './Ticker.jsx';
 import User from './User.jsx';
@@ -31,7 +32,7 @@ class App extends Component {
           <ul>
             {this.renderTicker()}
           </ul>
-          {this.props.currentUser ? (<User xmr_balance={100} btc_balance={1}/>) : ''}
+          {this.props.currentUser ? (<User xmr_balance={this.props.balances.xmr} btc_balance={this.props.balances.btc}/>) : ''}
         </header>
       </div>
     );
@@ -44,7 +45,9 @@ App.propTypes = {
 
 export default createContainer(() => {
   Meteor.subscribe('tickers');
+  Meteor.subscribe('balances');
   return {
+    balances: Balances.findOne(),
     ticker: Tickers.find().fetch(),
     currentUser: Meteor.user()
   };
