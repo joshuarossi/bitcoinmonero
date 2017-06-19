@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Meteor} from 'meteor/meteor';
 
-export default class Ticker extends Component {
+export default class User extends Component {
   render() {
     return (
       <span className="text">
