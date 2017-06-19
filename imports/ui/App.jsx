@@ -27,7 +27,7 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>BitcoinMonero</h1>
-          <AccountsUIWrapper/>
+           <AccountsUIWrapper/>
           <ul>
             {this.renderTicker()}
           </ul>
