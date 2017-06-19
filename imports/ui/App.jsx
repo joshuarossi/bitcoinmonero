@@ -7,6 +7,7 @@ import {createContainer} from 'meteor/react-meteor-data';
 import {Tickers} from '../api/tickers.js';
 
 import Ticker from './Ticker.jsx';
+import User from './User.jsx';
 
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
@@ -26,10 +27,11 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>BitcoinMonero</h1>
-          <AccountsUIWrapper/> 
+          <AccountsUIWrapper/>
           <ul>
             {this.renderTicker()}
           </ul>
+          <User />
         </header>
       </div>
     );
