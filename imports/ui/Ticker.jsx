@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {Meteor} from 'meteor/meteor';
 
 export default class Ticker extends Component {
@@ -15,6 +14,3 @@ export default class Ticker extends Component {
     )
   }
 }
-
-Ticker.propTypes = {
-};
