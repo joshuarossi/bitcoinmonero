@@ -6,6 +6,7 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 import {Tickers} from '../api/tickers.js';
 import {Balances} from '../api/balances.js';
+import {test} from '../api/test.js'
 
 import Ticker from './Ticker.jsx';
 import User from './User.jsx';

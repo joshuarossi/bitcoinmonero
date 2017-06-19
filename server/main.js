@@ -2,6 +2,7 @@ import { Accounts } from 'meteor/accounts-base';
 import {Balances} from '../imports/api/balances.js';
 
 import '../imports/api/tickers.js'
+import '../imports/api/test.js'
 
 Accounts.onCreateUser((options, user) => {
   console.log(options)
