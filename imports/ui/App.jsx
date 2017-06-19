@@ -31,7 +31,7 @@ class App extends Component {
           <ul>
             {this.renderTicker()}
           </ul>
-          <User />
+          <User xmr_balance={100} btc_balance={1}/>
         </header>
       </div>
     );
