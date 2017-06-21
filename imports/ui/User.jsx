@@ -13,7 +13,6 @@ export default class User extends Component {
         <br></br>
         Balance: {this.props.btc_balance}
         <br></br>
-        <button>Convert</button>
       </span>
     )
   }

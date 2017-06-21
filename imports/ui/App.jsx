@@ -10,7 +10,7 @@ import {test} from '../api/test.js'
 
 import Ticker from './Ticker.jsx';
 import User from './User.jsx';
-
+import Converter from './Converter.jsx'
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 // App component - represents the whole app
@@ -33,7 +33,8 @@ class App extends Component {
           <ul>
             {this.renderTicker()}
           </ul>
-          {this.props.currentUser ? (<User xmr_balance={this.props.balances.xmr} btc_balance={this.props.balances.btc}/>) : ''}
+          {this.props.currentUser ? (<User xmr_balance={this.props.balances.xmr} btc_balance={this.props.balances.btc}/> ) : ''}
+          {this.props.currentUser ? (<Converter /> ): ''}
         </header>
       </div>
     );
