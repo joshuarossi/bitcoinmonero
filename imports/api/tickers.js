@@ -51,6 +51,18 @@ const om = Meteor.bindEnvironment(
     }))
   }
 
+  wss.onclose = () => {
+    const wss = new WS('wss://api.bitfinex.com/ws/')
+    wss.onmessage = om
+    wss.onopen = () => {
+    wss.send(JSON.stringify({
+      "event":"subscribe",
+      "channel":"ticker",
+      "pair":"XMRBTC"
+      }))
+    }
+  }
+
   Meteor.publish('tickers', function tickerPublication() {
     return Tickers.find();
   });

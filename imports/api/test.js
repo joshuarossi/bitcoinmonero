@@ -22,5 +22,10 @@ Meteor.methods({
     else {
       Balances.update({user: this.userId}, {$inc: {btc: amount*last_price, xmr: -amount}})
     }
+  },
+  'withdraw'(currency, amount){
+    if (Meteor.isServer) {
+      console.log(`withdrawal of ${amount} ${currency} for user ${this.userId} `)
+    }
   }
 })
